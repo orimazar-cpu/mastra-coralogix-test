@@ -1,0 +1,31 @@
+# Dependencies
+node_modules/
+
+# Mastra fork (cloned by setup.sh)
+mastra-fork/
+
+# Environment variables (contains secrets)
+.env
+.env.local
+.env.*.local
+
+# Build outputs
+dist/
+build/
+
+# Logs
+*.log
+npm-debug.log*
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# pnpm
+.turbo/

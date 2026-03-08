@@ -1,0 +1,29 @@
+{
+  "name": "coralogix-multiagent-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@mastra/coralogix": "file:../mastra-fork/observability/coralogix",
+    "@mastra/core": "file:../mastra-fork/packages/core",
+    "@mastra/observability": "file:../mastra-fork/observability/mastra",
+    "@mastra/otel-exporter": "file:../mastra-fork/observability/otel-exporter",
+    "dotenv": "^17.3.1",
+    "esbuild": "^0.27.3",
+    "get-tsconfig": "^4.13.6",
+    "json-schema": "^0.4.0",
+    "nanoid": "^3.3.11",
+    "resolve-pkg-maps": "^1.0.0",
+    "secure-json-parse": "^2.7.0",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3",
+    "zod": "^3.25.76"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}
