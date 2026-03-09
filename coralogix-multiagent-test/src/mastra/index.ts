@@ -12,13 +12,11 @@ export const mastra = new Mastra({
   observability: new Observability({
     configs: {
       default: {
-        serviceName: 'coralogix-multiagent-test',
-        exporters: [
-          new CoralogixExporter({
-            applicationName: 'multiagent-test',
-            subsystemName: 'mastra',
-          }),
-        ],
+        serviceName: 'mastra-multiagent-test',
+        bridge: new CoralogixExporter({
+          applicationName: 'multiagent-test',
+          subsystemName: 'mastra',
+        }),
       },
     },
   }),
