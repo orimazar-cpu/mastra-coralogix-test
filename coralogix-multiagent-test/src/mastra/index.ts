@@ -1,7 +1,10 @@
 import { Mastra } from '@mastra/core';
 import { Observability } from '@mastra/observability';
-import { CoralogixExporter } from '@mastra/coralogix';
 import { coordinatorAgent, researcherAgent, writerAgent } from './agents';
+import { CoralogixExporter } from '@mastra/coralogix';
+
+const cxToken = process.env.CX_TOKEN;
+const cxEndpoint = process.env.CX_ENDPOINT;
 
 export const mastra = new Mastra({
   agents: {
@@ -12,11 +15,15 @@ export const mastra = new Mastra({
   observability: new Observability({
     configs: {
       default: {
+        serializationOptions: {
+          maxStringLength: 100000, // increase from default 1024
+          },
         serviceName: 'mastra-multiagent-test',
-        bridge: new CoralogixExporter({
-          applicationName: 'multiagent-test',
-          subsystemName: 'mastra',
-        }),
+        exporters: [new CoralogixExporter({
+          applicationName: 'ori-mastra-test',
+          subsystemName: 'ori-mastra-test',
+          debug: true,
+        }),]
       },
     },
   }),
